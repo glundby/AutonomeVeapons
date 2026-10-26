@@ -6,18 +6,19 @@ Defining superclass Vehicle(treading.Tread) for
 multitreading "concurrent" execution and simulation.
 Generating several subclass(Vehicle) to test.
 """
+import threading
 import time
-from time import time
+import random
 from time import sleep
+from time import time
+
 import numpy as np
-from random import randint
+
 from geopy.point import Point
 
-import threading
-
+from AutonomeGlobals import infsound, infspeed, artsound, artspeed, firesound
 from AutonomeGlobals import simtime, simrate
 from AutonomeGlobals import tanksound, tankspeed, helisound, helispeed
-from AutonomeGlobals import infsound, infspeed, artsound, artspeed, firesound
 
 
 class Vehicle(threading.Thread):
@@ -168,7 +169,7 @@ class ActiveArtillery(Vehicle):
         self.detected = False
         self.destroyed = False
         self.designated = False
-        if randint(1, 2) == 1:
+        if random.randint(1, 2) == 1:
             self.fireing = False
             self.soundrange = artsound
         else:

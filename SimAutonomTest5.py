@@ -1,7 +1,7 @@
 #!/user/bin/python3
 """ Test program for Autonome Veapons
 https://www.color-hex.com/color-palette/84389"""
-
+import numpy as np
 import gmplot
 # Defined Classes for the simulation:
 from SimAutonomVeapon5 import Rocket
@@ -176,7 +176,6 @@ for t in activeartillery:
         marker_lats.append(t.Pos.latitude)
         marker_lngs.append(t.Pos.longitude)
 gmap.scatter(marker_lats, marker_lngs, '#fff400', size=200, marker=False)
-
 gmap.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"
 gmap.draw("RestFiMap.html")
 

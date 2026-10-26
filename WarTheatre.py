@@ -1,26 +1,25 @@
 #!/user/bin/python3
+
+import numpy
 from numpy import random, cos
+
 import gmplot
-# Defined Classes for the simulation:
-import SimAutonomVeapon5
-from SimAutonomVeapon5 import Autonome, Rocket, Observer,BnObserver, ArtBn
-from SimAutonomVeapon5 import PanserHaubits, gmap1
-import TargetClass
-from TargetClass import Tanks, Heli, Infantry, ActiveArtillery
+from AutonomeGlobals import V1hitrate, V2hitrate, V1Speed, V2Speed
+from AutonomeGlobals import artbnrange, V0art, observervisual
+from AutonomeGlobals import bnobservers
+from AutonomeGlobals import numPH, PHrange, PHv0, PHhitrate, numGRA
+from AutonomeGlobals import numrocketV1, numrocketV2, numobserver, rocketV1range, rocketV2range
 # Contains all the parameters to change for Simulation:
-import AutonomeGlobals
-from AutonomeGlobals import simtime, simrate
 # number of objects in simulation:
 from AutonomeGlobals import numtanks, numheli, numartbn, numinf, numactiveartillery
-from AutonomeGlobals import numrocketV1, numrocketV2, numobserver, rocketV1range, rocketV2range
-from AutonomeGlobals import numbnobserver, bnobservers
-from AutonomeGlobals import V1hitrate, V2hitrate, V1Speed, V2Speed
-from AutonomeGlobals import ammoinartbn, artbnrange, V0art, observervisual
-from AutonomeGlobals import numPH, PHrange, PHv0, PHhitrate, numGRA
-
+from AutonomeGlobals import rockets, infantry, activeartillery
 # Object container lists:
 from AutonomeGlobals import tanks, helis, observers, artbns, panserhaubits
-from AutonomeGlobals import rockets, infantry, activeartillery
+from SimAutonomVeapon5 import PanserHaubits
+# Defined Classes for the simulation:
+from SimAutonomVeapon5 import Rocket, Observer, BnObserver, ArtBn
+from TargetClass import Tanks, Heli, Infantry, ActiveArtillery
+
 
 #import AreaDef
 #from AreaDef import fromLat, fromLon

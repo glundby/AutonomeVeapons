@@ -8,8 +8,8 @@ import gmplot
 # Dal:
 fromLat = 60.0
 fromLon = 11.0
-hArea =  16.0  # Km Northward 
-wArea =  25.0  # Km Eastward
+hArea = 16.0  # Km Northward
+wArea = 25.0  # Km Eastward
 
 # Kongsvinger
 # fromLat = 60.245676
@@ -23,7 +23,7 @@ wArea =  25.0  # Km Eastward
 # hArea = 50
 # wArea = 8
 
-# Google map key:  AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY
+# Google map key:  "Get Your OWN!"
 
 # Operational Theatre
 hA = hArea/1.11/100                           # Km to fractional deg

@@ -9,7 +9,7 @@ simrate = 1/1       # i.e. 1/60 is 1 minute simtime : 60 minutes realtime.
 obsolete = 60     # time in sec to remove target from messages
 
 # Targets:
-numtanks  = 30              # TANKS PARAMETERS:
+numtanks = 30              # TANKS PARAMETERS:
 tanksound = 4000            # Max detection range at max speed
 tankspeed = 40  # Km/h      # Max speed
 

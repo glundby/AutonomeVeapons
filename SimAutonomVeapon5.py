@@ -12,6 +12,7 @@ import numpy as np
 from numpy import random
 from random import randint
 from math import sqrt
+import geopy
 from geopy.point import Point
 import threading
 from AutonomeGlobals import simtime, messages, obsolete
