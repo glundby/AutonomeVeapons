@@ -3,6 +3,8 @@
 https://www.color-hex.com/color-palette/84389"""
 
 import gmplot
+
+import AutonomeGlobals
 # Defined Classes for the simulation:
 from SimAutonomVeapon5 import Rocket
 from WarTheatre import generatewarmap
@@ -17,12 +19,16 @@ from AutonomeGlobals import numGRA  # ,numPH, PHrange, PHv0, PHhitrate
 # Object container lists:
 from AutonomeGlobals import tanks, helis, observers, bnobservers, artbns, panserhaubits
 from AutonomeGlobals import rockets, infantry, activeartillery
+from AutonomeGlobals import APIkey
 
 # FUTURE IMPROVEMENT IS TO MAKE AN APP TO DEFINE WAR THEATER
 # AND PLACE TARGETS OBSERVERS AND UNITS ON A GEOGRAPHIC MAP.
 # IN THE MEANTIME WE MAKE A SQUARE AND PLACE ALL AT RANDOM
 
-# Generate Targets, and Autonome weapons and place randomly
+# Generate Targets, and Autonome weapons and place random
+
+# Must provide valid secret APIkey
+AutonomeGlobals.APIkey = input("Enter valid GoogleMap API key! ")
 
 generatewarmap(fromLat, fromLon, hArea, wArea)             # Hides the nasty work
 # May be changed to smarter interactive module
@@ -141,8 +147,8 @@ for t in infantry:
 gmap1.scatter(marker_lats, marker_lngs, '#3B0B39', size=300, marker=False)
 
 # Write global Fire Map drawn of Autonome         
-gmap1.apikey = "GoogleAPIkey"
-gmap1.draw("FireMap.html")
+gmap1.apikey = APIkey
+gmap1.draw("../../Documents/FireMap.html")
 
 # lat_list = []
 # lon_list = []
@@ -176,8 +182,8 @@ for t in activeartillery:
         marker_lats.append(t.Pos.latitude)
         marker_lngs.append(t.Pos.longitude)
 gmap.scatter(marker_lats, marker_lngs, '#fff400', size=200, marker=False)
-gmap.apikey = "GoogleMapAPIkey"
-gmap.draw("RestFiMap.html")
+gmap.apikey = APIkey
+gmap.draw("../../Documents/RestFiMap.html")
 
 gmap = gmplot.GoogleMapPlotter(fromLat+hA/2, fromLon+wA/2, 12)  # zoom level last
 
@@ -203,16 +209,15 @@ for t in observers:
     marker_lngs.append(t.Pos.longitude)
 gmap.scatter(marker_lats, marker_lngs, '#c69aff', size=200, marker=False)
 
-gmap.apikey = "GoogleMapAPIkey"
-gmap.draw("RestOwnMap.html")
-
+gmap.apikey = APIkey
+gmap.draw("../../Documents/RestOwnMap.html")
                                       
 print("")
-print("results in browser at file://OwnUnits.html")
-print("    and in browser at file://EnemyUnits.html")
-print("    and in browser at file://FireMap.html")
-print("    and in browser at file://RestFiMap.html")
-print("    and in browser at file://RestOwnMap.html")
+print("results in browser at Documents/OwnUnits.html")
+print("    and in browser at Documents/EnemyUnits.html")
+print("    and in browser at Documents/FireMap.html")
+print("    and in browser at Documents/RestFiMap.html")
+print("    and in browser at Documents/RestOwnMap.html")
 print("")
 print("Rest Weapons:", Rocket.v1counter, "Rockets V1.", Rocket.v2counter, "Rockets V2")
 print("")

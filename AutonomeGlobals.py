@@ -1,7 +1,9 @@
 #!/user/bin/python3
 """Global variables for Autonome Weapon Simulation
 """
-from typing import Any
+import typing
+
+APIkey = ""
 
 # Simulation parameters
 simtime = 5        # Simulation time in minutes
@@ -71,4 +73,4 @@ bnobservers = []
 rockets = []
 drones = []
 infantry = []
-panserhaubits: list[Any] = []
+panserhaubits: list[typing.Any] = []

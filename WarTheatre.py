@@ -15,6 +15,7 @@ from AutonomeGlobals import numtanks, numheli, numartbn, numinf, numactiveartill
 from AutonomeGlobals import rockets, infantry, activeartillery
 # Object container lists:
 from AutonomeGlobals import tanks, helis, observers, artbns, panserhaubits
+from AutonomeGlobals import APIkey
 from SimAutonomVeapon5 import PanserHaubits
 # Defined Classes for the simulation:
 from SimAutonomVeapon5 import Rocket, Observer, BnObserver, ArtBn
@@ -77,8 +78,8 @@ def generatewarmap(lat, lon, height, width):
         lon_list.append(t.Pos.longitude)
     gmap.scatter(lat_list, lon_list, '#ff7b00', size=200, marker=False)
     
-    gmap.apikey = "GoogleMapAPIKey"
-    gmap.draw( "EnemyUnits.html")
+    gmap.apikey = APIkey
+    gmap.draw( "../../Documents/EnemyUnits.html")
     
     # All Own unit
     gmap = gmplot.GoogleMapPlotter(fromLat+hA/2, fromLon+wA/2, 12) # zoom level last
@@ -160,10 +161,10 @@ def generatewarmap(lat, lon, height, width):
     gmap.scatter(lat_list, lon_list, '#ff8acb', size=400, marker=False)                       
 #        gmap.marker( t.Pos.latitude, t.Pos.longitude, 'blue' )
 
-    gmap.apikey = "GoogleMapAPIKey"
-    gmap.draw( "OwnUnits.html")
+    gmap.apikey = APIkey
+    gmap.draw( "../../Documents/OwnUnits.html")
 
-    print("You   may see own units on Map at file://01Python/AutonomeVeapons/OwnUnits.html")
-    print("You may see enemy units on Map at file://01Python/AutonomeVeapons/EnemyUnits.html")
+    print("You   may see own units on Map at Documents/AutonomeVeapons/OwnUnits.html")
+    print("You may see enemy units on Map at Documents/AutonomeVeapons/EnemyUnits.html")
     input("Press <Enter> to start simulation. ")
 ###
