@@ -1,7 +1,7 @@
 #!/user/bin/python3
-""" Test program for Autonome Veapons
+""" Test program for Autonome Weapons
 https://www.color-hex.com/color-palette/84389"""
-import numpy as np
+
 import gmplot
 # Defined Classes for the simulation:
 from SimAutonomVeapon5 import Rocket
@@ -22,7 +22,7 @@ from AutonomeGlobals import rockets, infantry, activeartillery
 # AND PLACE TARGETS OBSERVERS AND UNITS ON A GEOGRAPHIC MAP.
 # IN THE MEANTIME WE MAKE A SQUARE AND PLACE ALL AT RANDOM
 
-# Generate Targets, and Autonome veapons and place randomly
+# Generate Targets, and Autonome weapons and place randomly
 
 generatewarmap(fromLat, fromLon, hArea, wArea)             # Hides the nasty work
 # May be changed to smarter interactive module
@@ -55,10 +55,10 @@ for t in bnobservers:         # lastly start observers to make target messages
 print("Started all Observers and BnObservers")
 
 print("        All units have started simulation")
-# Simulation runs..All in parallell
+# Simulation runs... All in parallel
 for t in panserhaubits:
     t.join()
-print("All PanserHaubits finished")    
+print("All PanserHaubits finished")
 for t in observers:
     t.join()
 print("All Observer finished")
@@ -141,7 +141,7 @@ for t in infantry:
 gmap1.scatter(marker_lats, marker_lngs, '#3B0B39', size=300, marker=False)
 
 # Write global Fire Map drawn of Autonome         
-gmap1.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"
+gmap1.apikey = "GoogleAPIkey"
 gmap1.draw("FireMap.html")
 
 # lat_list = []
@@ -176,7 +176,7 @@ for t in activeartillery:
         marker_lats.append(t.Pos.latitude)
         marker_lngs.append(t.Pos.longitude)
 gmap.scatter(marker_lats, marker_lngs, '#fff400', size=200, marker=False)
-gmap.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"
+gmap.apikey = "GoogleMapAPIkey"
 gmap.draw("RestFiMap.html")
 
 gmap = gmplot.GoogleMapPlotter(fromLat+hA/2, fromLon+wA/2, 12)  # zoom level last
@@ -203,7 +203,7 @@ for t in observers:
     marker_lngs.append(t.Pos.longitude)
 gmap.scatter(marker_lats, marker_lngs, '#c69aff', size=200, marker=False)
 
-gmap.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"
+gmap.apikey = "GoogleMapAPIkey"
 gmap.draw("RestOwnMap.html")
 
                                       
@@ -214,7 +214,7 @@ print("    and in browser at file://FireMap.html")
 print("    and in browser at file://RestFiMap.html")
 print("    and in browser at file://RestOwnMap.html")
 print("")
-print("Rest veapons:", Rocket.v1counter, "Rockets V1.", Rocket.v2counter, "Rockets V2")
+print("Rest Weapons:", Rocket.v1counter, "Rockets V1.", Rocket.v2counter, "Rockets V2")
 print("")
 print(" Enemy  destroyed  left  NumHit")
 print(" Helis   ", helidestroyed, "      ", (numheli-helidestroyed))

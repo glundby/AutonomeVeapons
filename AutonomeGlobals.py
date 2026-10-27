@@ -1,6 +1,8 @@
 #!/user/bin/python3
-"""Global variables for Autonome Veapon Simulation
+"""Global variables for Autonome Weapon Simulation
 """
+from typing import Any
+
 # Simulation parameters
 simtime = 5        # Simulation time in minutes
 simrate = 1/1       # i.e. 1/60 is 1 minute simtime : 60 minutes realtime.
@@ -22,32 +24,32 @@ helispeed = 200             # Km/h Max speed
 numobserver = 60            # OBSERVER PARAMETERS
 observervisual = 2000       # Visual detection range ( 0 for FOG :-)
                             # Sound detection based on Target sounds
-# Autonome Veapons
+# Autonome Weapons
 numinf    = 15              # INFANTRY PARAMETERS (company size)
 infsound  = 1200            # Max detection range at max speed
 infspeed  = 5   # Km/h      # Max speed
 
 numactiveartillery = 18     # ACTIVE ARTILLERY PARAMETERS
 artsound  = 3000            # Max detection range at max speed
-firesound = 7000            # Detection range when fireing
+firesound = 7000            # Detection range when firing
 artspeed  = 40  # Km/h      # Max speed
 
 numrocketV1 = 60            # RocketV1 PARAMETERS:
 rocketV1range = 2900        # Range
 V1Speed = 200   # m/s
-V1hitrate = 80  # %         # Kill probabillity Rocket V1 and V2
+V1hitrate = 80  # %         # Kill probability Rocket V1 and V2
 
 numrocketV2 = 60            # RocketV2 PARAMETERS:
 rocketV2range = 6000        # Range
 V2Speed = 300               # m/s
 
-                            # Artillery Batalions
+                            # Artillery Battalions
 numartbn = 1                # ARTBN PARAMETERS
 artbnrange = 40000          # Range     
 V0art = 800     # m/s
 ammoinartbn = 1500          # Ammunition available
 roundstofire = 6            # Salvos to fire
-V2hitrate = 80  # %         # Kill probabillity Guided RA ammo
+V2hitrate = 80  # %         # Kill probability Guided RA ammo
 numbnobserver = numartbn * 16         # Regular observer teams incl.Artjeger
 
 # PanserHaubits
@@ -69,4 +71,4 @@ bnobservers = []
 rockets = []
 drones = []
 infantry = []
-panserhaubits = []
+panserhaubits: list[Any] = []

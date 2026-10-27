@@ -77,7 +77,7 @@ def generatewarmap(lat, lon, height, width):
         lon_list.append(t.Pos.longitude)
     gmap.scatter(lat_list, lon_list, '#ff7b00', size=200, marker=False)
     
-    gmap.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"  
+    gmap.apikey = "GoogleMapAPIKey"
     gmap.draw( "EnemyUnits.html")
     
     # All Own unit
@@ -160,7 +160,7 @@ def generatewarmap(lat, lon, height, width):
     gmap.scatter(lat_list, lon_list, '#ff8acb', size=400, marker=False)                       
 #        gmap.marker( t.Pos.latitude, t.Pos.longitude, 'blue' )
 
-    gmap.apikey = "AIzaSyCgYgSUGCBI5oxHEW-X_AXDBCj668Ei9zY"  
+    gmap.apikey = "GoogleMapAPIKey"
     gmap.draw( "OwnUnits.html")
 
     print("You   may see own units on Map at file://01Python/AutonomeVeapons/OwnUnits.html")

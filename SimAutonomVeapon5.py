@@ -2,7 +2,7 @@
 """
 TEST OF OBJECT ORIENTED "CONCURRENT" SIMULATION         
 Defining superclass Vehicle(treading.Tread) for
-multitreading "concurrent" execution and simulation.
+multithreading "concurrent" execution and simulation.
 Generating several subclass(Vehicle) to test.
 """
 import time
@@ -12,7 +12,6 @@ import numpy as np
 from numpy import random
 from random import randint
 from math import sqrt
-import geopy
 from geopy.point import Point
 import threading
 from AutonomeGlobals import simtime, messages, obsolete
@@ -53,7 +52,7 @@ class Autonome(threading.Thread):
             else:
                 toold = obsolete     
             if (now - t.timestamp) >= toold:    # when obsolete take out of messages
-                t.detected = False                 # re designate object possibly in
+                t.detected = False                 # re-designate object possibly in
                 t.designated = False               # new position after it has moved
                 t.timestamp = time()               # in case we need to know when in messages
                 if not messages == []:
@@ -65,12 +64,12 @@ class Autonome(threading.Thread):
 
 
 class Observer(Autonome):
-    """Generic stationary Observer' # Subclass of Autonome inherits all attributes and methods from Autonome."""
+    """Generic stationary Observer""" # Subclass of Autonome inherits all attributes and methods from Autonome."""
 
     counter = 0
 
     def __init__(self, posisjon, visibility):  # Own Class Observer counter
-        super().__init__(posisjon)  # Uses Superclass __init__!!"
+        super().__init__(posisjon)  # Uses Superclass __init__!!!
         self.maxspeed = 0         
         Observer.counter += 1
         self.visualrange = visibility
@@ -146,7 +145,7 @@ class Observer(Autonome):
 class BnObserver(Observer):
 
     def __init__(self, posisjon, visibility):  # Own Class Observer counter
-        super().__init__(posisjon, visibility)  # Uses Superclass __init__!!"
+        super().__init__(posisjon, visibility)  # Uses Superclass __init__!!!
 
     def _activity(self):        # Override Super activity
         counter = simtime * 60            # in seconds
@@ -256,7 +255,7 @@ class Rocket(Autonome):          # Subclass of Autonome inherits all
 
 
 class ArtBn(Autonome):             # Subclass of Autonome inherits all
-    """Generic ArtBn'          # attributes and methods from Autonome."""
+    """Generic ArtBn"""         # attributes and methods from Autonome
 
     counter = 0                    # Own Class ArtBn counter
 
@@ -329,7 +328,7 @@ class PanserHaubits(Autonome):          # Subclass of Autonome inherits all
     counter = 0                    # Own Class Rocket counter
 
     def __init__(self, posisjon, maxrange, maxspeed, hitrate, numGRA):
-        super().__init__(posisjon)  # Uses superclass __init__!!!
+        super().__init__(posisjon) # Uses superclass __init__
         self.maxspeed = maxspeed   # flight speed
         self.range = maxrange      # Practical range
         self.hitrate = hitrate
@@ -383,5 +382,5 @@ class PanserHaubits(Autonome):          # Subclass of Autonome inherits all
                             if self.numgranat <= 0:
                                 return      # Nothing more to do for this gun
 
-# May add more sub classes here with extra attributes, parameters and
+# May add more subclasses here with extra attributes, parameters and
 # methods as needed.... May also override superclass Vehicle
